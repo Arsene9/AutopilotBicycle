@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">AutopilotBicycle</string>
+
+    <string name="Gain_text">Gain (K)</string>
+    <string name="K1_text">K1</string>
+    <string name="K2_text">K2</string>
+    <string name="K3_text">K3</string>
+    <string name="K4_text">K4</string>
+    <string name="K1_value">0.00</string>
+    <string name="K2_value">0.00</string>
+    <string name="K3_value">0.00</string>
+    <string name="K4_value">0.00</string>
+
+    <string name="Velocity_text">Velocity (V)</string>
+    <string name="Velocity_unit_text">m/s</string>
+    <string name="Velocity_value">0.00</string>
+
+    <string name="Sample_Time_text">Sample Time (T)</string>
+    <string name="Sample_Time_unit_text">s</string>
+    <string name="Sample_Time_value">0.00</string>
+
+    <string name="Start_button_text">Start</string>
+
+    <string name="Stop_button_text">Stop</string>
+
+    <string name="Abort_button_text">Abort</string>
+
+    <string name="Message_from_Arduino">Waiting on Yun</string>
+    <string name="Message_to_Arduino">To Yun</string>
+
+    <string name="Torque_Text">Torque (Tou)</string>
+    <string name="Torque_Value">0.00</string>
+    <string name="Torque_Unit">ῖ</string>
+    <string name="Torque_Profile_Text">TPGen</string>
+
+</resources>

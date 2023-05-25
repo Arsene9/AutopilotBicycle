@@ -1,0 +1,242 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:background="@color/black"
+	android:weightSum="1">
+
+	<android.support.v7.widget.Toolbar
+		android:layout_width="match_parent"
+		android:layout_height="40dp"
+		android:background="@color/black"
+		android:minHeight="?attr/actionBarSize"
+		android:id="@+id/MainToolBar"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true"
+		app:theme="@style/ThemeOverlay.AppCompat.Dark"
+		app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/MainToolBar">
+		<TextView
+			android:text="Data Plot"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@color/white"
+			android:textStyle="bold"
+			android:textSize="@dimen/Title_size"
+			android:textAlignment="center"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/DataEntryTextView"
+			android:textAllCaps="true" />
+	</RelativeLayout>
+
+	<RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSFault"
+        android:text="Driver Servo Fault"
+        android:checked="false"
+        android:background="@android:color/background_dark"
+        android:textColor="@color/white"
+        android:textSize="@dimen/Unit_size" />
+
+	<RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SSFault"
+        android:text="Steer Servo Fault"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:textSize="@dimen/Unit_size" />
+
+	<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="344dp"
+		android:layout_weight="0.93">
+        <LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" >
+
+			<com.androidplot.xy.XYPlot
+		        android:id="@+id/dynamicXYPlot1"
+		        android:layout_width="fill_parent"
+		        android:layout_height="444dp"
+		        android:layout_marginLeft="3dp"
+		        android:layout_marginRight="3dp"
+		        android:layout_marginTop="3dp"
+		        androidPlot.title="Roll Angle"
+				android:background="@color/black"
+				android:focusable="true" />
+
+			<com.androidplot.xy.XYPlot
+                android:id="@+id/dynamicXYPlot2"
+                android:layout_width="fill_parent"
+                android:layout_height="444dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="3dp"
+                androidPlot.title="Steer Angle"
+                android:scrollbarAlwaysDrawVerticalTrack="false"
+                android:background="@color/black" />
+
+			<com.androidplot.xy.XYPlot
+				android:id="@+id/dynamicXYPlot3"
+				android:layout_width="fill_parent"
+				android:layout_height="444dp"
+				android:layout_marginLeft="3dp"
+				android:layout_marginRight="3dp"
+				android:layout_marginTop="3dp"
+				androidPlot.title="Roll Angle Rate"
+				android:scrollbarAlwaysDrawVerticalTrack="false"
+				android:background="@color/black" />
+
+			<com.androidplot.xy.XYPlot
+				android:id="@+id/dynamicXYPlot4"
+				android:layout_width="fill_parent"
+				android:layout_height="444dp"
+				android:layout_marginLeft="3dp"
+				android:layout_marginRight="3dp"
+				android:layout_marginTop="3dp"
+				androidPlot.title="Steer Angle Rate"
+				android:scrollbarAlwaysDrawVerticalTrack="false"
+				android:background="@color/black" />
+
+
+
+			<!-- <LinearLayout android:orientation="horizontal" -->
+	    <!-- android:gravity="center" -->
+	    <!-- android:layout_width="fill_parent" -->
+	    <!-- android:layout_height="wrap_content"> -->
+	    <!-- <CheckBox android:id="@+id/hwAccelerationCb" -->
+	    <!-- android:visibility="gone" -->
+	    <!-- android:text="HW Acceleration" -->
+	    <!-- android:layout_width="wrap_content" -->
+	    <!-- android:layout_height="wrap_content"/> -->
+	
+	
+	    <!-- <CheckBox android:id="@+id/showFpsCb" -->
+	    <!-- android:text="Show FPS" -->
+	    <!-- android:layout_width="wrap_content" -->
+	    <!-- android:layout_height="wrap_content"/> -->
+	    </LinearLayout>
+	</ScrollView>
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+        <Button
+			android:id="@+id/StopButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/Yellow_Slow"
+			android:minHeight="@dimen/Button_Height"
+			android:minWidth="@dimen/Button_Width"
+			android:text="@string/Stop_button_text"
+			android:textSize="@dimen/Unit_size"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true" />
+
+		<Button
+			android:id="@+id/AbortButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/Boston_University_red"
+			android:minHeight="@dimen/Button_Height"
+			android:minWidth="@dimen/Button_Width"
+			android:text="@string/Abort_button_text"
+			android:textSize="@dimen/Unit_size"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentEnd="true" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:minHeight="@dimen/Button_Height"
+			android:layout_centerVertical="true"
+			android:layout_centerHorizontal="true"
+            android:inputType="textMultiLine"
+			android:id="@+id/StatusTextView"
+			android:textColor="@color/white"
+			android:textSize="14dp"
+			android:textAlignment="center" />
+	</RelativeLayout>
+
+</LinearLayout> <!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
+<!-- android:orientation="vertical" -->
+<!-- android:layout_width="fill_parent" -->
+<!-- android:layout_height="fill_parent" > -->
+
+
+<!-- <com.androidplot.xy.XYPlot -->
+<!-- android:id="@+id/dynamicXYPlot1" -->
+<!-- android:layout_width="fill_parent" -->
+<!-- android:layout_height="fill_parent" -->
+<!-- androidplot.renderMode="use_background_thread" -->
+<!-- androidPlot.title="A Dynamic XY Plot1" -->
+<!-- androidPlot.graphWidget.marginTop="20dp" -->
+<!-- androidPlot.graphWidget.marginLeft="15dp" -->
+<!-- androidPlot.graphWidget.marginBottom="25dp" -->
+<!-- androidPlot.graphWidget.marginRight="10dp" /> -->
+
+
+<!-- <com.androidplot.xy.XYPlot -->
+<!-- android:id="@+id/dynamicXYPlot2" -->
+<!-- android:layout_width="fill_parent" -->
+<!-- android:layout_height="fill_parent" -->
+<!-- androidplot.renderMode="use_background_thread" -->
+<!-- androidPlot.title="A Dynamic XY Plot2" -->
+<!-- androidPlot.graphWidget.marginTop="20dp" -->
+<!-- androidPlot.graphWidget.marginLeft="15dp" -->
+<!-- androidPlot.graphWidget.marginBottom="25dp" -->
+<!-- androidPlot.graphWidget.marginRight="10dp" /> -->
+
+
+<!-- <com.androidplot.xy.XYPlot -->
+<!-- androidPlot.domainLabel="Domain" -->
+<!-- androidPlot.rangeLabel="Range" -->
+<!-- androidPlot.titleWidget.labelPaint.textSize="@dimen/title_font_size" -->
+<!-- androidPlot.domainLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size" -->
+<!-- androidPlot.rangeLabelWidget.labelPaint.textSize="@dimen/range_label_font_size" -->
+<!-- androidPlot.graphWidget.rangeLabelPaint.textSize="@dimen/range_tick_label_font_size" -->
+<!-- androidPlot.graphWidget.rangeOriginLabelPaint.textSize="@dimen/range_tick_label_font_size" -->
+<!-- androidPlot.graphWidget.domainLabelPaint.textSize="@dimen/domain_tick_label_font_size" -->
+<!-- androidPlot.graphWidget.domainOriginLabelPaint.textSize="@dimen/domain_tick_label_font_size" -->
+<!-- androidPlot.legendWidget.textPaint.textSize="@dimen/legend_text_font_size" -->
+<!-- androidPlot.legendWidget.iconSizeMetrics.heightMetric.value="15dp" -->
+<!-- androidPlot.legendWidget.iconSizeMetrics.widthMetric.value="15dp" -->
+<!-- androidPlot.legendWidget.heightMetric.value="25dp" -->
+<!-- androidPlot.legendWidget.positionMetrics.anchor="right_bottom"/> -->
+<!-- </LinearLayout> -->
+
+
+<!-- <com.androidplot.xy.XYPlot -->
+<!-- android:id="@+id/dynamicXYPlot1" -->
+<!-- android:layout_width="fill_parent" -->
+<!-- android:layout_height="fill_parent" -->
+<!-- androidplot.renderMode="use_background_thread" -->
+<!-- androidPlot.title="A Dynamic XY Plot" -->
+<!-- androidPlot.domainLabel="Domain" -->
+<!-- androidPlot.rangeLabel="Range" -->
+<!-- androidPlot.titleWidget.labelPaint.textSize="@dimen/title_font_size" -->
+<!-- androidPlot.domainLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size" -->
+<!-- androidPlot.rangeLabelWidget.labelPaint.textSize="@dimen/range_label_font_size" -->
+<!-- androidPlot.graphWidget.marginTop="20dp" -->
+<!-- androidPlot.graphWidget.marginLeft="15dp" -->
+<!-- androidPlot.graphWidget.marginBottom="25dp" -->
+<!-- androidPlot.graphWidget.marginRight="10dp" -->
+<!-- androidPlot.graphWidget.rangeLabelPaint.textSize="@dimen/range_tick_label_font_size" -->
+<!-- androidPlot.graphWidget.rangeOriginLabelPaint.textSize="@dimen/range_tick_label_font_size" -->
+<!-- androidPlot.graphWidget.domainLabelPaint.textSize="@dimen/domain_tick_label_font_size" -->
+<!-- androidPlot.graphWidget.domainOriginLabelPaint.textSize="@dimen/domain_tick_label_font_size" -->
+<!-- androidPlot.legendWidget.textPaint.textSize="@dimen/legend_text_font_size" -->
+<!-- androidPlot.legendWidget.iconSizeMetrics.heightMetric.value="15dp" -->
+<!-- androidPlot.legendWidget.iconSizeMetrics.widthMetric.value="15dp" -->
+<!-- androidPlot.legendWidget.heightMetric.value="25dp" -->
+<!-- androidPlot.legendWidget.positionMetrics.anchor="right_bottom"/> -->

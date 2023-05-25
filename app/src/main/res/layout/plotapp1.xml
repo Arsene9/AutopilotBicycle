@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolbar2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSFault"
+        android:text="Driver Servo Fault"
+        android:checked="false"
+        android:background="@android:color/background_dark"
+        android:textColor="@color/white"
+        android:textSize="@dimen/Unit_size" />
+
+    <RadioButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/SSFault"
+        android:text="Steer Servo Fault"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:textSize="@dimen/Unit_size" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/dynamicXYPlot1"
+                android:layout_width="fill_parent"
+                android:layout_height="444dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="3dp"
+                androidPlot.title="Roll Angle"
+                android:background="@color/black"
+                android:focusable="true" />
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/dynamicXYPlot2"
+                android:layout_width="fill_parent"
+                android:layout_height="444dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="3dp"
+                androidPlot.title="Steer Angle"
+                android:scrollbarAlwaysDrawVerticalTrack="false"
+                android:background="@color/black" />
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/dynamicXYPlot3"
+                android:layout_width="fill_parent"
+                android:layout_height="444dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="3dp"
+                androidPlot.title="Roll Angle Rate"
+                android:scrollbarAlwaysDrawVerticalTrack="false"
+                android:background="@color/black" />
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/dynamicXYPlot4"
+                android:layout_width="fill_parent"
+                android:layout_height="444dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="3dp"
+                androidPlot.title="Steer Angle Rate"
+                android:scrollbarAlwaysDrawVerticalTrack="false"
+                android:background="@color/black" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

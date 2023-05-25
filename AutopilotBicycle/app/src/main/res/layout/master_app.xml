@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_master_app"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.naftech.autopilotbicycle.MasterApp"
+    android:background="@color/black">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/black"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/MainToolBar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+    <TextView
+        android:text="Data Entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/MainToolBar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/Title_size"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/DataEntryTextView"
+        android:textAllCaps="true" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/horizontalScrollView"
+        android:layout_below="@+id/DataEntryTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <RelativeLayout
+            android:layout_width="605dp"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/SMSwitch"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+                <RelativeLayout
+                    android:layout_width="605dp"
+                    android:layout_height="780dp"
+                    android:background="@color/black"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin" >
+
+                    <!-- 			android:scrollbars="vertical" -->
+                    <!-- 			tools:context="com.example.autopilotbicycle.MainActivity" > -->
+
+                    <EditText
+                        android:id="@+id/K2EditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/K1EditText"
+                        android:layout_below="@+id/K1EditText"
+                        android:layout_marginTop="31dp"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/Unit_size"
+                        tools:ignore="LabelFor"
+                        android:hint="@string/K2_value" />
+
+                    <EditText
+                        android:id="@+id/K3EditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/K2EditText"
+                        android:layout_below="@+id/K2EditText"
+                        android:layout_marginTop="31dp"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/Unit_size"
+                        tools:ignore="LabelFor"
+                        android:hint="@string/K3_value" />
+
+                    <EditText
+                        android:id="@+id/K4EditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/K3EditText"
+                        android:layout_below="@+id/K3EditText"
+                        android:layout_marginTop="31dp"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/Unit_size"
+                        tools:ignore="LabelFor"
+                        android:hint="@string/K4_value" />
+
+                    <TextView
+                        android:id="@+id/VelocityTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/GainTextView"
+                        android:layout_below="@+id/K4TextView"
+                        android:layout_marginTop="@dimen/mytop"
+                        android:text="@string/Velocity_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size" />
+
+                    <EditText
+                        android:id="@+id/VelocityEditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/Unit_size"
+                        tools:ignore="LabelFor"
+                        android:layout_below="@+id/VelocityTextView"
+                        android:layout_alignLeft="@+id/K4EditText"
+                        android:layout_alignStart="@+id/K4EditText"
+                        android:hint="@string/Velocity_value" />
+
+                    <TextView
+                        android:id="@+id/VelocityUnitTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/VelocityEditText"
+                        android:layout_alignBottom="@+id/VelocityEditText"
+                        android:layout_toRightOf="@+id/VelocityEditText"
+                        android:text="@string/Velocity_unit_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size" />
+
+                    <TextView
+                        android:id="@+id/SampleTimeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/VelocityTextView"
+                        android:layout_below="@+id/VelocityEditText"
+                        android:layout_marginTop="@dimen/mytop"
+                        android:text="@string/Sample_Time_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size" />
+
+                    <TextView
+                        android:id="@+id/SampleUniteTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/SampleValueEditText"
+                        android:layout_alignBottom="@+id/SampleValueEditText"
+                        android:layout_alignLeft="@+id/VelocityUnitTextView"
+                        android:text="@string/Sample_Time_unit_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size" />
+
+                    <TextView
+                        android:id="@+id/K2TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/K1TextView"
+                        android:layout_alignTop="@+id/K2EditText"
+                        android:text="@string/K2_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size" />
+
+                    <TextView
+                        android:id="@+id/K3TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/K2TextView"
+                        android:layout_alignTop="@+id/K3EditText"
+                        android:text="@string/K3_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size" />
+
+                    <EditText
+                        android:id="@+id/SampleValueEditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/Unit_size"
+                        tools:ignore="LabelFor"
+                        android:layout_below="@+id/SampleTimeTextView"
+                        android:layout_alignLeft="@+id/VelocityEditText"
+                        android:layout_alignStart="@+id/VelocityEditText"
+                        android:hint="@string/Sample_Time_value" />
+
+                    <TextView
+                        android:id="@+id/K4TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/K3TextView"
+                        android:layout_alignTop="@+id/K4EditText"
+                        android:text="@string/K4_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size" />
+
+                    <EditText
+                        android:id="@+id/K1EditText"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberSigned|numberDecimal"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="@dimen/Unit_size"
+                        tools:ignore="LabelFor"
+                        android:hint="@string/K1_value"
+                        android:layout_below="@+id/GainTextView"
+                        android:layout_toRightOf="@+id/K1TextView"
+                        android:layout_toEndOf="@+id/K1TextView">
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/K1TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/K1_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size"
+                        android:layout_alignTop="@+id/K1EditText"
+                        android:layout_centerHorizontal="true" />
+
+                    <Button
+                        android:id="@+id/StartButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/android_green"
+                        android:minHeight="@dimen/Button_Height"
+                        android:minWidth="@dimen/Button_Width"
+                        android:text="@string/Start_button_text"
+                        android:textSize="@dimen/Unit_size"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="41dp"
+                        android:layout_below="@+id/SampleValueEditText"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/GainTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Gain_text"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/Unit_size"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginStart="40dp" />
+
+                </RelativeLayout>
+            </ScrollView>
+
+            <Switch
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:text="Driver Motor"
+                android:id="@+id/DMSwitch"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Unit_size"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="55dp"
+                android:layout_marginStart="55dp" />
+
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Steer Motor"
+                android:id="@+id/SMSwitch"
+                android:textColor="@color/white"
+                android:textSize="@dimen/Unit_size"
+                android:layout_below="@+id/DMSwitch"
+                android:layout_alignLeft="@+id/DMSwitch"
+                android:layout_alignStart="@+id/DMSwitch"
+                android:layout_alignRight="@+id/DMSwitch"
+                android:layout_alignEnd="@+id/DMSwitch" />
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+</RelativeLayout>
